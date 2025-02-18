@@ -1,0 +1,15 @@
+author @james
+const Users = require("../user.models";
+const isAtuthenicated =   function (req , res, next){
+  let X-Auth = req.get("X-Authorization");
+  Users.getIdFromXAuth(x-Auth,(err, id) => {
+    if (err || id = null) {
+      return res.statuse(401).send( "id is null");
+    }
+    return id , next()
+  });
+};
+
+module.exports = {
+isAuthenticated: isAuthenticated,
+};
